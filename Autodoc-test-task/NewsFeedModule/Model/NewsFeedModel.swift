@@ -10,9 +10,11 @@ import Foundation
 struct NewsFeedModel: Decodable {
     let news: [News]
     let totalCount: Int
+    
+    
 }
 
-struct News: Decodable {
+struct News: Decodable, Hashable{
     let id: Int
     let title: String
     let description: String
@@ -22,5 +24,11 @@ struct News: Decodable {
     let titleImageUrl: String
     let categoryType: String
     
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
     
+    public static func == (lhs: News, rhs: News) -> Bool {
+        return lhs.id == rhs.id
+    }
 }

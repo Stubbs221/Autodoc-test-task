@@ -3,4 +3,547 @@
    uuid = "406CED0D-F093-4DA8-AD67-C2C80FE382C0"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "968F13C4-04D8-45FB-BA37-249DC49AA686"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Autodoc-test-task/NewsFeedModule/View/NewsFeedView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "updateCollectionView(news:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "781BFA23-6E2A-4AD9-9D52-8E607688C9A3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Autodoc-test-task/NewsFeedModule/View/NewsFeedView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
+            landmarkName = "updateCollectionView(news:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A9482456-9EF5-4E75-91BC-F1C5284245EF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Autodoc-test-task/NewsFeedModule/View/NewsFeedView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "NewsFeedView"
+            landmarkType = "21">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D8F4F35A-7528-40BC-9FA8-159ACEBF1B27"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Autodoc-test-task/NewsFeedModule/View/NewsFeedView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "collectionView(_:viewForSupplementaryElementOfKind:at:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "15D8588E-DFBD-4F60-839C-9A26AF6023C2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Autodoc-test-task/NewsFeedModule/View/NewsFeedView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "collectionView(_:willDisplaySupplementaryView:forElementKind:at:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AE8E191D-59F1-453E-96A7-88FA02243D01"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Autodoc-test-task/NewsFeedModule/View/NewsFeedView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "collectionView(_:didEndDisplayingSupplementaryView:forElementOfKind:at:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3B31794A-9927-4CCF-970C-F0EA6CC1499D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Autodoc-test-task/NewsFeedModule/View/NewsFeedView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "loadMoreData()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4AB4733D-54A6-4F62-B9A2-5387C5114DDA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Autodoc-test-task/NewsFeedModule/ViewModel/NewsFeedViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "transform(input:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CB288D52-3D99-4E02-A9F5-5B14A0E73881"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Autodoc-test-task/AutodocAPIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "getNewsFeed(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1623A429-597B-4F32-8412-CA4B9CFBEE59"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Autodoc-test-task/NewsFeedModule/ViewModel/NewsFeedViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "handleNewsFeed()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1623A429-597B-4F32-8412-CA4B9CFBEE59 - bbaaa9c12988a22b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Autodoc_test_task.NewsFeedViewModel.handleNewsFeed() -&gt; ()"
+                  moduleName = "Autodoc-test-task"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vasilyMaslov/Desktop/skillFactory_01/Autodoc-test-task/Autodoc-test-task/NewsFeedModule/ViewModel/NewsFeedViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "1623A429-597B-4F32-8412-CA4B9CFBEE59 - aa02f833d1d8be05"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Combine.Subscribers.Completion&lt;Swift.Error&gt;) -&gt; () in Autodoc_test_task.NewsFeedViewModel.handleNewsFeed() -&gt; ()"
+                  moduleName = "Autodoc-test-task"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vasilyMaslov/Desktop/skillFactory_01/Autodoc-test-task/Autodoc-test-task/NewsFeedModule/ViewModel/NewsFeedViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C4B12EF0-21A9-438C-B764-18DAFC515BAA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Autodoc-test-task/AutodocAPIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "getNewsFeed(from:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C4B12EF0-21A9-438C-B764-18DAFC515BAA - 10166ffdbdc41f78"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Autodoc_test_task.AutodocAPIService.getNewsFeed(from: Swift.Int) async throws -&gt; Swift.Array&lt;Autodoc_test_task.News&gt;"
+                  moduleName = "Autodoc-test-task"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vasilyMaslov/Desktop/skillFactory_01/Autodoc-test-task/Autodoc-test-task/AutodocAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  uuid = "C4B12EF0-21A9-438C-B764-18DAFC515BAA - 46ae08d2592c7ed7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Autodoc_test_task.AutodocAPIService.getNewsFeed(from: Swift.Int) async throws -&gt; Swift.Array&lt;Autodoc_test_task.News&gt;"
+                  moduleName = "Autodoc-test-task"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vasilyMaslov/Desktop/skillFactory_01/Autodoc-test-task/Autodoc-test-task/AutodocAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "116">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "937BBEE8-B526-467C-A9F2-210673F7A435"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Autodoc-test-task/AutodocAPIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "getNewsFeed(from:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "937BBEE8-B526-467C-A9F2-210673F7A435 - 46ae08d2592c7ef6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Autodoc_test_task.AutodocAPIService.getNewsFeed(from: Swift.Int) async throws -&gt; Swift.Array&lt;Autodoc_test_task.News&gt;"
+                  moduleName = "Autodoc-test-task"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vasilyMaslov/Desktop/skillFactory_01/Autodoc-test-task/Autodoc-test-task/AutodocAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  uuid = "937BBEE8-B526-467C-A9F2-210673F7A435 - 46ae08d2592c7ef6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Autodoc_test_task.AutodocAPIService.getNewsFeed(from: Swift.Int) async throws -&gt; Swift.Array&lt;Autodoc_test_task.News&gt;"
+                  moduleName = "Autodoc-test-task"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vasilyMaslov/Desktop/skillFactory_01/Autodoc-test-task/Autodoc-test-task/AutodocAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "428">
+               </Location>
+               <Location
+                  uuid = "937BBEE8-B526-467C-A9F2-210673F7A435 - 46ae08d2592c7ef6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Autodoc_test_task.AutodocAPIService.getNewsFeed(from: Swift.Int) async throws -&gt; Swift.Array&lt;Autodoc_test_task.News&gt;"
+                  moduleName = "Autodoc-test-task"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vasilyMaslov/Desktop/skillFactory_01/Autodoc-test-task/Autodoc-test-task/AutodocAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "740">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0483B155-2A9F-4664-948A-75D5F76117CC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Autodoc-test-task/AutodocAPIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "getNewsFeed(from:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0483B155-2A9F-4664-948A-75D5F76117CC - 46ae08d2592c7e30"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Autodoc_test_task.AutodocAPIService.getNewsFeed(from: Swift.Int) async throws -&gt; Swift.Array&lt;Autodoc_test_task.News&gt;"
+                  moduleName = "Autodoc-test-task"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vasilyMaslov/Desktop/skillFactory_01/Autodoc-test-task/Autodoc-test-task/AutodocAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "580">
+               </Location>
+               <Location
+                  uuid = "0483B155-2A9F-4664-948A-75D5F76117CC - b343011a466ef3ea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for Autodoc_test_task.AutodocAPIService.getNewsFeed(from: Swift.Int) async throws -&gt; Swift.Array&lt;Autodoc_test_task.News&gt;"
+                  moduleName = "Autodoc-test-task"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vasilyMaslov/Desktop/skillFactory_01/Autodoc-test-task/Autodoc-test-task/AutodocAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "0483B155-2A9F-4664-948A-75D5F76117CC - f8db70cfdf42a232"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Autodoc_test_task.AutodocAPIService.getNewsFeed(from: Swift.Int) async throws -&gt; Swift.Array&lt;Autodoc_test_task.News&gt;"
+                  moduleName = "Autodoc-test-task"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vasilyMaslov/Desktop/skillFactory_01/Autodoc-test-task/Autodoc-test-task/AutodocAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "0483B155-2A9F-4664-948A-75D5F76117CC - c9d124f910764433"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Autodoc_test_task.AutodocAPIService.getNewsFeed(from: Swift.Int) async throws -&gt; Swift.Array&lt;Autodoc_test_task.News&gt;"
+                  moduleName = "Autodoc-test-task"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vasilyMaslov/Desktop/skillFactory_01/Autodoc-test-task/Autodoc-test-task/AutodocAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3E3F588D-7E44-406B-AC2E-DE6288CE614A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Autodoc-test-task/AutodocAPIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "getNewsFeed(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DF23BA0D-8C2D-4147-BDCE-D03F429B3B8B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Autodoc-test-task/ImageCache.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "image(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5C2F414C-F79E-44EA-8B08-17147EC6F442"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Autodoc-test-task/ImageCache.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "insertImage(_:for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2CFFFC6A-6729-4BB3-A3D0-2395980C1D18"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Autodoc-test-task/ImageCache.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "image(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A03AFAE7-F5CA-49BB-B56F-83BBE90CFDD8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Autodoc-test-task/ImageCache.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "image(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "76212A4F-82E8-4A5E-A745-CB5E96824FA0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Autodoc-test-task/ImageCache.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "insertImage(_:for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7C5FA0B2-C51F-498F-A42C-925A8B66012B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Autodoc-test-task/Extensions/UIImage + Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "diskSize()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "05A7BD50-56E5-4FF0-B77E-BF0B44B089A9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Autodoc-test-task/Extensions/UIImage + Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "diskSize()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "31C52463-B764-45DF-908C-3D4D207F9213"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Autodoc-test-task/Extensions/UIImage + Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "diskSize()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "17C2D1E2-2380-4340-AED3-A844A6FE7293"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Autodoc-test-task/Extensions/UIImage + Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "diskSize()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

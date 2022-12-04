@@ -15,6 +15,11 @@
 		1BBE464E293A5270000C4FA9 /* NewsFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE464D293A5270000C4FA9 /* NewsFeedViewModel.swift */; };
 		1BBE4651293A54B7000C4FA9 /* Combine + Async:Await.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE4650293A54B7000C4FA9 /* Combine + Async:Await.swift */; };
 		1BBE4653293B2AAF000C4FA9 /* NewsFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE4652293B2AAF000C4FA9 /* NewsFeedModel.swift */; };
+		1BBE4655293CB75C000C4FA9 /* NewsFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE4654293CB75C000C4FA9 /* NewsFeedCell.swift */; };
+		1BBE4657293CD9E9000C4FA9 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE4656293CD9E9000C4FA9 /* ImageCache.swift */; };
+		1BBE4659293CDE7B000C4FA9 /* UIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE4658293CDE7B000C4FA9 /* UIImage + Extension.swift */; };
+		1BBE465B293CF0A7000C4FA9 /* AutodocAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE465A293CF0A7000C4FA9 /* AutodocAPIService.swift */; };
+		1BBE465D293D08D3000C4FA9 /* LoadingReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE465C293D08D3000C4FA9 /* LoadingReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		1BBE464D293A5270000C4FA9 /* NewsFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedViewModel.swift; sourceTree = "<group>"; };
 		1BBE4650293A54B7000C4FA9 /* Combine + Async:Await.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combine + Async:Await.swift"; sourceTree = "<group>"; };
 		1BBE4652293B2AAF000C4FA9 /* NewsFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedModel.swift; sourceTree = "<group>"; };
+		1BBE4654293CB75C000C4FA9 /* NewsFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCell.swift; sourceTree = "<group>"; };
+		1BBE4656293CD9E9000C4FA9 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		1BBE4658293CDE7B000C4FA9 /* UIImage + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extension.swift"; sourceTree = "<group>"; };
+		1BBE465A293CF0A7000C4FA9 /* AutodocAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutodocAPIService.swift; sourceTree = "<group>"; };
+		1BBE465C293D08D3000C4FA9 /* LoadingReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +77,8 @@
 				1BBE463E293A515E000C4FA9 /* Assets.xcassets */,
 				1BBE4640293A515E000C4FA9 /* LaunchScreen.storyboard */,
 				1BBE4643293A515E000C4FA9 /* Info.plist */,
+				1BBE4656293CD9E9000C4FA9 /* ImageCache.swift */,
+				1BBE465A293CF0A7000C4FA9 /* AutodocAPIService.swift */,
 			);
 			path = "Autodoc-test-task";
 			sourceTree = "<group>";
@@ -85,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				1BBE4639293A515D000C4FA9 /* NewsFeedView.swift */,
+				1BBE4654293CB75C000C4FA9 /* NewsFeedCell.swift */,
+				1BBE465C293D08D3000C4FA9 /* LoadingReusableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -109,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				1BBE4650293A54B7000C4FA9 /* Combine + Async:Await.swift */,
+				1BBE4658293CDE7B000C4FA9 /* UIImage + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -185,9 +200,14 @@
 			files = (
 				1BBE463A293A515D000C4FA9 /* NewsFeedView.swift in Sources */,
 				1BBE4636293A515D000C4FA9 /* AppDelegate.swift in Sources */,
+				1BBE465D293D08D3000C4FA9 /* LoadingReusableView.swift in Sources */,
+				1BBE4657293CD9E9000C4FA9 /* ImageCache.swift in Sources */,
 				1BBE4653293B2AAF000C4FA9 /* NewsFeedModel.swift in Sources */,
 				1BBE4651293A54B7000C4FA9 /* Combine + Async:Await.swift in Sources */,
+				1BBE4659293CDE7B000C4FA9 /* UIImage + Extension.swift in Sources */,
+				1BBE4655293CB75C000C4FA9 /* NewsFeedCell.swift in Sources */,
 				1BBE4638293A515D000C4FA9 /* SceneDelegate.swift in Sources */,
+				1BBE465B293CF0A7000C4FA9 /* AutodocAPIService.swift in Sources */,
 				1BBE464E293A5270000C4FA9 /* NewsFeedViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
