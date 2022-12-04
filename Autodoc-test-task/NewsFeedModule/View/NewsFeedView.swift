@@ -19,6 +19,7 @@ class NewsFeedView: UIViewController {
     
     private var isLoading = false
     private var loadingView: LoadingReusableView?
+    private let refreshControl = UIRefreshControl()
     
 //    проперти Combine
     private let viewModel = NewsFeedViewModel()
@@ -27,7 +28,7 @@ class NewsFeedView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(newsFeedCollectionView)
+        setupUI()
         bind()
         
     }
@@ -39,14 +40,31 @@ class NewsFeedView: UIViewController {
     
     private lazy var newsFeedCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(NewsFeedCell.self, forCellWithReuseIdentifier: NewsFeedCell.reuseIdentifier)
         collectionView.register(LoadingReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: LoadingReusableView.reuseIdentifier)
-        collectionView.frame = self.view.bounds
         collectionView.backgroundColor = .white
         collectionView.delegate = self
+        collectionView.refreshControl = refreshControl
+        collectionView.refreshControl?.addTarget(self, action: #selector(callPullToRefresh), for: .valueChanged)
         return collectionView
 
     }()
+    
+    @objc func callPullToRefresh() {
+        input.send(.pulledToRefresh)
+    }
+    
+    func setupUI() {
+        view.backgroundColor = .white
+        view.addSubview(newsFeedCollectionView)
+        
+        NSLayoutConstraint.activate([
+            newsFeedCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            newsFeedCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            newsFeedCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            newsFeedCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)])
+    }
     
     private func createLayout() -> UICollectionViewLayout {
         let itemSize = NSCollectionLayoutSize(
@@ -54,9 +72,10 @@ class NewsFeedView: UIViewController {
             heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
+        
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.8),
-            heightDimension: .absolute(120))
+            heightDimension: .absolute(240))
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
             subitems: [item])
@@ -73,6 +92,7 @@ class NewsFeedView: UIViewController {
         section.boundarySupplementaryItems = [footer]
         
         let layout = UICollectionViewCompositionalLayout(section: section)
+        
         return layout
     }
 
@@ -85,8 +105,8 @@ class NewsFeedView: UIViewController {
                 guard let self else { return }
                 switch event {
                 case .fetchNewsFeedDidSucceed:
+                    self.refreshControl.endRefreshing()
                     self.updateCollectionView(news: self.viewModel.news)
-//                    print(newsFeed)
                     print(self.viewModel.pageToLoad)
                 case .fetchNewsFeedDidFail(let error):
                     print(error.localizedDescription)
@@ -150,8 +170,6 @@ extension NewsFeedView {
             indexPath: IndexPath) -> UICollectionReusableView? in
             
             guard let footer: LoadingReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: LoadingReusableView.reuseIdentifier, for: indexPath) as? LoadingReusableView else { return UICollectionReusableView() }
-//            footer.backgroundColor = .red
-            
             return footer
             
         }
@@ -164,10 +182,7 @@ extension NewsFeedView {
         
         dataSource = UICollectionViewDiffableDataSource(collectionView: newsFeedCollectionView, cellProvider: { (collectionView, indexPath, itemIdentifier) -> UICollectionViewCell? in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsFeedCell.reuseIdentifier, for: indexPath) as? NewsFeedCell else { return UICollectionViewCell() }
-            
             cell.configure(with: itemIdentifier)
-//            input.send(.loadImage(fromUrlString: itemIdentifier.titleImageUrl, withId: itemIdentifier.id))
-//            cell.titleImageView =
             return cell
         })
     }

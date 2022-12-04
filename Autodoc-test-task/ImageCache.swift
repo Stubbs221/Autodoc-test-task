@@ -18,9 +18,11 @@ protocol ImageCacheType: AnyObject {
     
 //    доступ к картинке по ключу(как к элементу массива) для последующих crud операций через точку
     subscript(_ url: URL) -> UIImage? { get set }
+    
 }
 
 final class ImageCache: ImageCacheType {
+    
     
 //    кэш первого уровня для изображений
     private lazy var imageCache: NSCache<AnyObject, AnyObject> = {
@@ -67,7 +69,8 @@ final class ImageCache: ImageCacheType {
         }
 //        если нет - ищет обычное изображение и также возвращает decoded версию
         if let image = imageCache.object(forKey: url as AnyObject) as? UIImage {
-            let decodedImage = image.decodedImage()
+            let compressedImage = image.scalePreservingAspectRatio(targetSize: CGSize(width: UIScreen.main.bounds.width, height: 200))
+            let decodedImage = compressedImage.decodedImage()
             decodedImageCache.setObject(decodedImage as AnyObject, forKey: url as AnyObject, cost: decodedImage.diskSize())
             
             return decodedImage
@@ -78,10 +81,11 @@ final class ImageCache: ImageCacheType {
     
     func insertImage(_ image: UIImage?, for url: URL) {
         guard let image else { return removeImage(for: url) }
-        let decodedImage = image.decodedImage()
+        let compressedImage = image.scalePreservingAspectRatio(targetSize: CGSize(width: UIScreen.main.bounds.width / 2, height: 100))
+        let decodedImage = compressedImage.decodedImage()
         print(decodedImage.diskSize())
 
-        imageCache.setObject(image, forKey: url as AnyObject)
+        imageCache.setObject(compressedImage, forKey: url as AnyObject)
         decodedImageCache.setObject(decodedImage as AnyObject, forKey: url as AnyObject, cost: decodedImage.diskSize())
         
     }

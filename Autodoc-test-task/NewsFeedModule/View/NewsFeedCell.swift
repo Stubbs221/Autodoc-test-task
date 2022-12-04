@@ -8,6 +8,7 @@
 import UIKit
 import Combine
 
+
 class NewsFeedCell: UICollectionViewCell {
     static let reuseIdentifier = "Cell"
     
@@ -41,7 +42,9 @@ class NewsFeedCell: UICollectionViewCell {
     lazy var titleImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.cornerRadius = 10
+        imageView.layer.masksToBounds = true
         return imageView
     }()
     
@@ -57,13 +60,13 @@ class NewsFeedCell: UICollectionViewCell {
         contentView.addSubview(titleImageView)
         
         NSLayoutConstraint.activate([
-            titleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)])
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5)])
         
         NSLayoutConstraint.activate([
-            titleImageView.heightAnchor.constraint(equalToConstant: 120),
-            titleImageView.widthAnchor.constraint(equalToConstant: 120),
-            titleImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            titleImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
+            titleImageView.heightAnchor.constraint(equalToConstant: 200),
+            titleImageView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 40),
             titleImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)])
         
     }
