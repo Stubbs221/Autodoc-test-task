@@ -15,14 +15,20 @@ struct NewsFeedModel: Decodable {
 }
 
 struct News: Decodable, Hashable{
+    var isSelected: Bool = false
+    
     let id: Int
     let title: String
     let description: String
-    let publishedDate: String
+    var publishedDate: String
     let url: String
     let fullUrl: String
     let titleImageUrl: String
     let categoryType: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case id, title, description, publishedDate, url, fullUrl, titleImageUrl, categoryType
+    }
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
@@ -31,4 +37,6 @@ struct News: Decodable, Hashable{
     public static func == (lhs: News, rhs: News) -> Bool {
         return lhs.id == rhs.id
     }
+    
+   
 }

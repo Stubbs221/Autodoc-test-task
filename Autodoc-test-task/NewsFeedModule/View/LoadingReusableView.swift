@@ -12,16 +12,18 @@ class LoadingReusableView: UICollectionReusableView {
     static let reuseIdentifier = "Footer"
     lazy var activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView(style: .large)
-        
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         return activityIndicator
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.addSubview(activityIndicator)
+        addSubview(activityIndicator)
         NSLayoutConstraint.activate([
             activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
-            activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor)])
+            activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor),
+            activityIndicator.heightAnchor.constraint(equalToConstant: 40),
+            activityIndicator.widthAnchor.constraint(equalToConstant: 40)])
     }
     
     required init?(coder: NSCoder) {
