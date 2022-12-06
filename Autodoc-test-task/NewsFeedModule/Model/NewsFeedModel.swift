@@ -10,13 +10,9 @@ import Foundation
 struct NewsFeedModel: Decodable {
     let news: [News]
     let totalCount: Int
-    
-    
 }
 
 struct News: Decodable, Hashable{
-    var isSelected: Bool = false
-    
     let id: Int
     let title: String
     let description: String
@@ -30,6 +26,7 @@ struct News: Decodable, Hashable{
         case id, title, description, publishedDate, url, fullUrl, titleImageUrl, categoryType
     }
     
+//    получаем хеш, чтоб проверять снепшоты для Diffable Data Source
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

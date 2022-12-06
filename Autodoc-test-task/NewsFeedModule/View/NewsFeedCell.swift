@@ -15,9 +15,10 @@ class NewsFeedCell: UICollectionViewCell {
     private var cancellable = Set<AnyCancellable>()
     private var input: PassthroughSubject<NewsFeedViewModel.Input, Never> = .init()
     private var viewModel = NewsFeedViewModel()
-    private var fullURLString = ""
-
     
+    private var fullURLString = ""
+    private var parentView: NewsFeedView?
+
     var isCellPressed: Bool = false
     
     private lazy var titleLabel: UILabel = {
@@ -76,12 +77,21 @@ class NewsFeedCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-
         bind()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        self.titleImageView.image = nil
+        self.titleLabel.text = nil
+        self.desctiprionLabel.text = nil
+        self.publishedDateLabel.text = nil
+        self.categoryTypeLabel.text = nil
+        self.isCellPressed = false
+        titleLabel.removeFromSuperview()
     }
     
     private func bind() {
@@ -97,18 +107,13 @@ class NewsFeedCell: UICollectionViewCell {
                 case .fetchImageDidFail(let error):
                     print(error.localizedDescription)
                     self.titleImageView.image = UIImage(named: "placeholder")
-                default:
-                    break
-                
+                default: break
                 }
             }.store(in: &cancellable)
-        
-        
     }
     
-    
+//    MARK: - Корректируем высоту в лейауте ячейки в зависимости от контента при состояниях открыто/закрыто
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
-        
         if self.isCellPressed {
             layoutAttributes.bounds.size.height = titleLabel.bounds.height +
             desctiprionLabel.bounds.height +
@@ -120,15 +125,24 @@ class NewsFeedCell: UICollectionViewCell {
             layoutAttributes.bounds.size.height = titleLabel.bounds.height +
             UIScreen.main.bounds.height / 4 + 30
         }
-        
-        
-        
         return layoutAttributes
     }
     
+//    наполнение ячейки данными
+    func configure(news: News, parentView: NewsFeedView) {
+        self.titleLabel.text = news.title
+        self.desctiprionLabel.text = news.description
+        self.publishedDateLabel.text = news.publishedDate
+        self.categoryTypeLabel.text = news.categoryType
+        self.fullURLString = news.fullUrl
+        self.openFullNewsButton.addTarget(self, action: #selector(openFullNewsButtonPressed(_:)), for: .touchUpInside)
+        self.parentView = parentView
+        loadImage(for: news)
+        setupUI()
+    }
+    
+//    установка ui
     func setupUI() {
-        
-        
         contentView.addSubview(titleLabel)
         contentView.addSubview(desctiprionLabel)
         contentView.addSubview(publishedDateLabel)
@@ -167,11 +181,12 @@ class NewsFeedCell: UICollectionViewCell {
             openFullNewsButton.topAnchor.constraint(equalTo: desctiprionLabel.bottomAnchor)
             ])
         
-        
+//       констрейнт изображения при состояниях открыто/закрыто
         let openConstraint = titleImageView.topAnchor.constraint(equalTo: desctiprionLabel.bottomAnchor, constant: 25)
 
         let closeConstraint = titleImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5)
 
+//        констрейнты и видимость внутренних элементов в зависимости от состояния открыто/закрыто
         if self.isCellPressed {
             desctiprionLabel.isHidden = false
             publishedDateLabel.isHidden = false
@@ -179,7 +194,6 @@ class NewsFeedCell: UICollectionViewCell {
             openFullNewsButton.isHidden = false
             openConstraint.isActive = true
             closeConstraint.isActive = false
-            
         } else {
             desctiprionLabel.isHidden = true
             publishedDateLabel.isHidden = true
@@ -187,37 +201,17 @@ class NewsFeedCell: UICollectionViewCell {
             openFullNewsButton.isHidden = true
             openConstraint.isActive = false
             closeConstraint.isActive = true
-
         }
     }
     
+//    просит родительский контроллер открыть ссылку в Safari
     @objc func openFullNewsButtonPressed(_ sender: UIButton) {
-        input.send(.openFullNewsButtonPressed(fromUrlString: fullURLString))
+        guard let url = URL(string: fullURLString) else { return }
+        self.parentView?.openWebView(url: url)
     }
     
-    func configure(news: News) {
-        self.titleLabel.text = news.title
-        self.desctiprionLabel.text = news.description
-        self.publishedDateLabel.text = news.publishedDate
-        self.categoryTypeLabel.text = news.categoryType
-        self.fullURLString = news.fullUrl
-        self.openFullNewsButton.addTarget(self, action: #selector(openFullNewsButtonPressed(_:)), for: .touchUpInside)
-
-        loadImage(for: news)
-        setupUI()
-    }
-    
+//    MARK: - Запрос на загрузку изображения
     private func loadImage(for news: News) {
         input.send(.loadImage(fromUrlString: news.titleImageUrl))
-    }
-    
-    override func prepareForReuse() {
-        self.titleImageView.image = nil
-        self.titleLabel.text = nil
-        self.desctiprionLabel.text = nil
-        self.publishedDateLabel.text = nil
-        self.categoryTypeLabel.text = nil
-        self.isCellPressed = false
-        titleLabel.removeFromSuperview()
     }
 }

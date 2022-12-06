@@ -7,11 +7,11 @@
 
 import UIKit
 import Combine
-import WebKit
+import SafariServices
 
 class NewsFeedView: UIViewController {
     
-    //    свойства Diffable Data Source
+    //    свойства и тайпэлиасы Diffable Data Source
     typealias DataSource = UICollectionViewDiffableDataSource<String?, News>
     typealias Snapshot = NSDiffableDataSourceSnapshot<String?, News>
     private var dataSource: DataSource?
@@ -23,20 +23,13 @@ class NewsFeedView: UIViewController {
     //    рефреш контрол для пуд ту рефреш
     private let refreshControl = UIRefreshControl()
     private var selectedItems: Set<Int> = []
-    private var webView = WKWebView()
+    
     
     //    свойства Combine
     private let viewModel = NewsFeedViewModel()
     private var input: PassthroughSubject<NewsFeedViewModel.Input, Never> = .init()
     private var cancellables = Set<AnyCancellable>()
     
-    override func loadView() {
-        let webConfiguration = WKWebViewConfiguration()
-        webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        webView.uiDelegate = self
-        view = webView
-        
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -50,6 +43,15 @@ class NewsFeedView: UIViewController {
         input.send(.viewDidAppear)
     }
     
+//    обновляем лейаут коллекции при смене ориентации на iPad
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        self.newsFeedCollectionView.collectionViewLayout.invalidateLayout()
+        guard let dataSource else { return }
+        var snapshot = dataSource.snapshot()
+                    snapshot.reloadSections([""])
+        self.dataSource?.apply(snapshot, animatingDifferences: true)
+    }
+    
     private lazy var newsFeedCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -59,15 +61,8 @@ class NewsFeedView: UIViewController {
         collectionView.delegate = self
         collectionView.refreshControl = refreshControl
         collectionView.refreshControl?.addTarget(self, action: #selector(callPullToRefresh), for: .valueChanged)
-        
         return collectionView
-        
     }()
-    
-    @objc func callPullToRefresh() {
-        self.selectedItems.removeAll()
-        input.send(.pulledToRefresh)
-    }
     
     func setupUI() {
         view.backgroundColor = .white
@@ -80,14 +75,12 @@ class NewsFeedView: UIViewController {
             newsFeedCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        self.newsFeedCollectionView.collectionViewLayout.invalidateLayout()
-        guard let dataSource else { return }
-        var snapshot = dataSource.snapshot()
-                    snapshot.reloadSections([""])
-        self.dataSource?.apply(snapshot, animatingDifferences: true)
+    @objc func callPullToRefresh() {
+        self.selectedItems.removeAll()
+        input.send(.pulledToRefresh)
     }
     
+//    MARK: - Compositional Layout
     private func createLayout() -> UICollectionViewLayout {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(
@@ -112,6 +105,7 @@ class NewsFeedView: UIViewController {
         return layout
     }
     
+//    MARK: - Биндинг Combine
     private func bind() {
         let output = viewModel.transform(input: input.eraseToAnyPublisher())
         
@@ -126,8 +120,6 @@ class NewsFeedView: UIViewController {
                     print(self.viewModel.pageToLoad)
                 case .fetchNewsFeedDidFail(let error):
                     print(error.localizedDescription)
-                case .openWebView(let url):
-                    self.openWebView(url: url)
                 default: break
                 }
             }.store(in: &cancellables)
@@ -135,8 +127,6 @@ class NewsFeedView: UIViewController {
 }
 
 extension NewsFeedView: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
-    
-    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionFooter {
             guard let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: LoadingReusableView.reuseIdentifier, for: indexPath) as? LoadingReusableView else { return UICollectionReusableView() }
@@ -164,20 +154,21 @@ extension NewsFeedView: UICollectionViewDelegateFlowLayout, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let currentNews = self.dataSource?.itemIdentifier(for: indexPath) else { return }
-        guard let firstNewsAfterCurrent = self.dataSource?.itemIdentifier(for: IndexPath(item: indexPath.row + 1, section: indexPath.section)) else { return }
-        guard let secondNewsAfterCurrent = self.dataSource?.itemIdentifier(for: IndexPath(item: indexPath.row + 2 , section: indexPath.section)) else { return }
+        guard let currentNews = self.dataSource?.itemIdentifier(for: indexPath),
+              let firstNewsAfterCurrent = self.dataSource?.itemIdentifier(for: IndexPath(item: indexPath.row + 1, section: indexPath.section)),
+              let secondNewsAfterCurrent = self.dataSource?.itemIdentifier(for: IndexPath(item: indexPath.row + 2 , section: indexPath.section)) else { return }
         
+//        проверяем есть ли выделенная ячейка в сете выделенных ячеек
         if selectedItems.contains(currentNews.id) {
             collectionView.deselectItem(at: indexPath, animated: true)
             return
         }
-        
         selectedItems.insert(currentNews.id)
         
         guard let dataSource else { return }
         var snapshot = dataSource.snapshot()
         
+//        обновляем текущий и две следующих ячейки
         snapshot.reloadItems([currentNews])
         snapshot.reloadItems([firstNewsAfterCurrent])
         snapshot.reloadItems([secondNewsAfterCurrent])
@@ -185,17 +176,17 @@ extension NewsFeedView: UICollectionViewDelegateFlowLayout, UICollectionViewDele
     }
 }
 
-//      MARK: - WebKit UI Delegate и метод открытия веб вью
-extension NewsFeedView: WKUIDelegate {
+//      MARK: - метод открытия SafariViewController
+extension NewsFeedView {
     func openWebView(url: URL) {
-        var webView = WKWebView()
-        let request = URLRequest(url: url)
-        webView.load(request)
+        let safariVC = SFSafariViewController(url: url)
+        present(safariVC, animated: true)
     }
 }
 
 //      MARK: - Методы Diffable Data Source
 extension NewsFeedView {
+    
     
     func setupFooter() {
         dataSource?.supplementaryViewProvider = { (
@@ -215,9 +206,7 @@ extension NewsFeedView {
             if self.selectedItems.contains(news.id) {
                 cell.isCellPressed = true
             }
-            cell.contentView.isUserInteractionEnabled = false
-            
-            cell.configure(news: news)
+            cell.configure(news: news, parentView: self)
             return cell
         })
     }
@@ -228,7 +217,6 @@ extension NewsFeedView {
         snapshot.appendItems(news, toSection: "")
         dataSource?.apply(snapshot, animatingDifferences: true)
     }
-    
 }
 
 

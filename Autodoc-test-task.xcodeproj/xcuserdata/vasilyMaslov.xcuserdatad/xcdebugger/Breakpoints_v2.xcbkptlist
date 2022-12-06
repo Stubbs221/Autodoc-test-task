@@ -7,38 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "968F13C4-04D8-45FB-BA37-249DC49AA686"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Autodoc-test-task/NewsFeedModule/View/NewsFeedView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
-            landmarkName = "updateCollectionView(news:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "781BFA23-6E2A-4AD9-9D52-8E607688C9A3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Autodoc-test-task/NewsFeedModule/View/NewsFeedView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
-            landmarkName = "updateCollectionView(news:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "15D8588E-DFBD-4F60-839C-9A26AF6023C2"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -46,8 +14,8 @@
             filePath = "Autodoc-test-task/NewsFeedModule/View/NewsFeedView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "collectionView(_:willDisplaySupplementaryView:forElementKind:at:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +30,8 @@
             filePath = "Autodoc-test-task/NewsFeedModule/View/NewsFeedView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "collectionView(_:didEndDisplayingSupplementaryView:forElementOfKind:at:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +46,8 @@
             filePath = "Autodoc-test-task/NewsFeedModule/ViewModel/NewsFeedViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "transform(input:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,8 +78,8 @@
             filePath = "Autodoc-test-task/NewsFeedModule/ViewModel/NewsFeedViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "handleNewsFeed()"
             landmarkType = "7">
             <Locations>
@@ -443,8 +411,8 @@
             filePath = "Autodoc-test-task/NewsFeedModule/View/NewsFeedCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "setupUI()"
             landmarkType = "7">
          </BreakpointContent>
@@ -459,25 +427,9 @@
             filePath = "Autodoc-test-task/NewsFeedModule/View/NewsFeedCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "preferredLayoutAttributesFitting(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "32CE7F62-DE1D-4F71-84A3-5BD46398002A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Autodoc-test-task/NewsFeedModule/View/NewsFeedCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
-            landmarkName = "setupUI()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -491,8 +443,8 @@
             filePath = "Autodoc-test-task/NewsFeedModule/View/NewsFeedCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "preferredLayoutAttributesFitting(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -507,25 +459,9 @@
             filePath = "Autodoc-test-task/NewsFeedModule/View/NewsFeedCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "preferredLayoutAttributesFitting(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "62B732E2-07A3-4049-9B95-AAAC9FE1E258"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Autodoc-test-task/NewsFeedModule/View/NewsFeedView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "216"
-            endingLineNumber = "216"
-            landmarkName = "setupDataSource()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -539,8 +475,8 @@
             filePath = "Autodoc-test-task/NewsFeedModule/View/NewsFeedView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "createLayout()"
             landmarkType = "7">
          </BreakpointContent>
@@ -555,25 +491,9 @@
             filePath = "Autodoc-test-task/NewsFeedModule/View/NewsFeedView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "createLayout()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6C396D71-AAA5-48E0-959B-53E0D5E3C93D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Autodoc-test-task/NewsFeedModule/View/NewsFeedCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
-            landmarkName = "loadImage(for:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -587,8 +507,8 @@
             filePath = "Autodoc-test-task/NewsFeedModule/ViewModel/NewsFeedViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "transform(input:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -603,8 +523,8 @@
             filePath = "Autodoc-test-task/NewsFeedModule/ViewModel/NewsFeedViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "handleImage(from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -619,8 +539,8 @@
             filePath = "Autodoc-test-task/NewsFeedModule/ViewModel/NewsFeedViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "handleImage(from:)"
             landmarkType = "7">
             <Locations>
@@ -667,8 +587,8 @@
             filePath = "Autodoc-test-task/NewsFeedModule/ViewModel/NewsFeedViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "handleImage(from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -683,8 +603,8 @@
             filePath = "Autodoc-test-task/NewsFeedModule/ViewModel/NewsFeedViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "handleImage(from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -699,105 +619,9 @@
             filePath = "Autodoc-test-task/NewsFeedModule/ViewModel/NewsFeedViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "handleImage(from:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "710CB010-C376-494B-97D3-AE7837BE121B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Autodoc-test-task/NewsFeedModule/View/NewsFeedCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
-            landmarkName = "openFullNewsButtonPressed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B0438D21-B985-489C-9D6B-76336A4ED174"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Autodoc-test-task/NewsFeedModule/View/NewsFeedCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
-            landmarkName = "openFullNewsButtonPressed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "902E8C5C-DA4D-4B24-B634-25FFD8C37875"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Autodoc-test-task/NewsFeedModule/ViewModel/NewsFeedViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "transform(input:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "507D3540-D2E9-40CE-A216-3EEAD24373D5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Autodoc-test-task/NewsFeedModule/View/NewsFeedView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
-            landmarkName = "bind()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F311E60E-A905-4C09-A0CF-F3FD1FFE6741"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Autodoc-test-task/NewsFeedModule/View/NewsFeedView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "bind()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "70D09625-BC78-4865-8D4C-B6469EB2E635"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Autodoc-test-task/NewsFeedModule/ViewModel/NewsFeedViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "transform(input:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

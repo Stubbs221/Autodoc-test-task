@@ -16,14 +16,11 @@ protocol ImageCacheType: AnyObject {
     
     func removeAllImages()
     
-//    доступ к картинке по ключу(как к элементу массива) для последующих crud операций через точку
+//    доступ к картинке по сабскрипту(как к элементу массива) для последующих crud операций через точку
     subscript(_ url: URL) -> UIImage? { get set }
-    
 }
 
 final class ImageCache: ImageCacheType {
-    
-    
 //    кэш первого уровня для изображений
     private lazy var imageCache: NSCache<AnyObject, AnyObject> = {
         let cache = NSCache<AnyObject, AnyObject>()
@@ -35,8 +32,6 @@ final class ImageCache: ImageCacheType {
     private lazy var decodedImageCache: NSCache<AnyObject, AnyObject> = {
         let cache = NSCache<AnyObject, AnyObject>()
         cache.totalCostLimit = config.memoryLimit
-        
-//        print(cache.totalCostLimit)
         return cache
     }()
     
@@ -72,10 +67,8 @@ final class ImageCache: ImageCacheType {
             let compressedImage = image.scalePreservingAspectRatio(targetSize: CGSize(width: UIScreen.main.bounds.width, height: 200))
             let decodedImage = compressedImage.decodedImage()
             decodedImageCache.setObject(decodedImage as AnyObject, forKey: url as AnyObject, cost: decodedImage.diskSize())
-            
             return decodedImage
         }
-       
         return nil
     }
     
@@ -83,11 +76,8 @@ final class ImageCache: ImageCacheType {
         guard let image else { return removeImage(for: url) }
         let compressedImage = image.scalePreservingAspectRatio(targetSize: CGSize(width: UIScreen.main.bounds.width / 2, height: 100))
         let decodedImage = compressedImage.decodedImage()
-        print(decodedImage.diskSize())
-
         imageCache.setObject(compressedImage, forKey: url as AnyObject)
         decodedImageCache.setObject(decodedImage as AnyObject, forKey: url as AnyObject, cost: decodedImage.diskSize())
-        
     }
     
     func removeImage(for url: URL) {

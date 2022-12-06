@@ -11,22 +11,31 @@ import WebKit
 
 class NewsFeedViewModel {
     
+//    ивенты приходящие с вью
     enum Input {
         case viewDidAppear
         case loadMoreNews
         case loadImage(fromUrlString: String)
         case pulledToRefresh
-        case openFullNewsButtonPressed(fromUrlString: String)
     }
     
+//    ивенты поступающие во вью
     enum Output {
         case fetchNewsFeedDidFail(error: Error)
         case fetchNewsFeedDidSucceed
         case fetchImageDidFail(error: Error)
         case fetchImageDidSucceed(image: UIImage)
-        case updateWithChangedData
-        case openWebView(fromUrl: URL)
     }
+    
+    
+    private let autodocAPIService: AutodocAPIServiceType
+//    кастомный кеш изображений для улучшения произсодительности
+    private let imageCache: ImageCacheType
+    
+    private let output: PassthroughSubject<Output, Never> = .init()
+    private var cancellables = Set<AnyCancellable>()
+    var pageToLoad = 1
+    var news = [News]()
     
     init(autodocAPIServiceType: AutodocAPIServiceType = AutodocAPIService(),
          imageCache: ImageCacheType = ImageCache()) {
@@ -34,14 +43,7 @@ class NewsFeedViewModel {
         self.imageCache = imageCache
     }
     
-    
-    private let output: PassthroughSubject<Output, Never> = .init()
-    private let autodocAPIService: AutodocAPIServiceType
-    private let imageCache: ImageCacheType
-    private var cancellables = Set<AnyCancellable>()
-    var pageToLoad = 1
-    var news = [News]()
-    
+//    MARK: - Слушаем события с вью
     func transform(input: AnyPublisher<Input, Never>) -> AnyPublisher<Output, Never> {
         input.sink { [ weak self ] event in
             guard let self else { return }
@@ -55,18 +57,14 @@ class NewsFeedViewModel {
                 self.handleNewsFeed()
             case .loadImage(let urlString):
                 self.handleImage(from: urlString)
-            case .openFullNewsButtonPressed(let fullUrlString):
-                guard let url = URL(string: fullUrlString) else { return }
-                self.output.send(.openWebView(fromUrl: url))
-//                self.handeOpenWebViewRequest(with: fullUrlString)
             }
         }.store(in: &cancellables)
         return output.eraseToAnyPublisher()
     }
     
+//    MARK: - Ловим страницу новостей
     func handleNewsFeed() {
         autodocAPIService.newsFeedPublisher(from: self.pageToLoad)
-        
             .sink { [weak self] completion in
                 if case .failure(let error) = completion {
                     self?.output.send(.fetchNewsFeedDidFail(error: error))
@@ -79,6 +77,7 @@ class NewsFeedViewModel {
             }.store(in: &cancellables)
     }
     
+//    MARK: - Ловим изображение из кеша/сети
     func handleImage(from urlString: String) {
         guard let url = URL(string: urlString) else { return }
         autodocAPIService.imagePublisher(url: url).sink { [weak self] completion in
@@ -114,8 +113,5 @@ class NewsFeedViewModel {
         }
         return result
     }
-    
-
-    
 }
 
