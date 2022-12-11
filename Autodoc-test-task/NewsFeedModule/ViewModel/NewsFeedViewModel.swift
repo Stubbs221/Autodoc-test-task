@@ -91,25 +91,10 @@ class NewsFeedViewModel {
     
 //    трансформирует дату из json в строку для View
     func transformDate(in allNews: [News]) -> [News] {
-        let months = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"]
-        
         var result = allNews
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        
         for (index, _) in allNews.enumerated() {
-            guard let date = dateFormatter.date(from: result[index].publishedDate) else { continue }
-            if Calendar.current.isDateInToday( date ) {
-                result[index].publishedDate = "сегодня"
-            } else {
-                let month = months[(Int(result[index].publishedDate.prefix(7).suffix(2)) ?? 0) - 1]
-                var day = String(result[index].publishedDate.prefix(10).suffix(2))
-                if day.first == "0" {
-                    day = String(day.suffix(1))
-                }
-                result[index].publishedDate = day + " " + month
-            }
+            result[index].publishedDate = allNews[index].publishedDate.convertToDateFormate(current: "yyyy-MM-dd'T'HH:mm:ss", convertTo: "d MMMM")
         }
         return result
     }

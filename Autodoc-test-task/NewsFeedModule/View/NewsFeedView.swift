@@ -154,9 +154,7 @@ extension NewsFeedView: UICollectionViewDelegateFlowLayout, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let currentNews = self.dataSource?.itemIdentifier(for: indexPath),
-              let firstNewsAfterCurrent = self.dataSource?.itemIdentifier(for: IndexPath(item: indexPath.row + 1, section: indexPath.section)),
-              let secondNewsAfterCurrent = self.dataSource?.itemIdentifier(for: IndexPath(item: indexPath.row + 2 , section: indexPath.section)) else { return }
+        guard let currentNews = self.dataSource?.itemIdentifier(for: indexPath) else { return }
         
 //        проверяем есть ли выделенная ячейка в сете выделенных ячеек
         if selectedItems.contains(currentNews.id) {
@@ -168,10 +166,7 @@ extension NewsFeedView: UICollectionViewDelegateFlowLayout, UICollectionViewDele
         guard let dataSource else { return }
         var snapshot = dataSource.snapshot()
         
-//        обновляем текущий и две следующих ячейки
         snapshot.reloadItems([currentNews])
-        snapshot.reloadItems([firstNewsAfterCurrent])
-        snapshot.reloadItems([secondNewsAfterCurrent])
         self.dataSource?.apply(snapshot, animatingDifferences: true)
     }
 }
